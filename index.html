@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM OFC · Toolkit</title>
+<meta name="description" content="FAM OFC Toolkit - Free & VIP tools for security research, pentesting & ethical hacking. SIM DB, RAT, bomber, faceswap, AI & more.">
+<meta name="keywords" content="FAM OFC, hacking tools, security toolkit, penetration testing, ethical hacking, VIP tools, free tools, SIM database, RAT, bomber, faceswap, CC generator, brute-force, website cloner, AI tools">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="icon/faheem.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ===== CLAY THEME ===== -->
+<link rel="stylesheet" href="famofc.css">
+
+<style>
+/* ==========================================================
+   FAM OFC — GET APP (APK-only landing) · Claymorphic
+   ========================================================== */
+
+body{
+    display:grid;
+    place-items:center;
+    min-height:100vh;
+    padding:20px 16px 48px !important;
+    overflow-x:hidden;
+}
+.shell{
+    width:min(100%,620px);
+    position:relative;
+    z-index:1;
+}
+
+.card{
+    position:relative;
+    padding:clamp(16px,4.5vw,30px);
+    border-radius:32px;
+    background:rgba(255,255,255,.94);
+    border:2px solid rgba(167,139,250,.22);
+    box-shadow:
+        0 6px 0 3px rgba(167,139,250,.22),
+        0 22px 48px rgba(100,60,200,.18),
+        inset 0 2px 0 #ffffff;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    animation:clykFloatUp .6s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* ============ HEADER (text only — no logo) ============ */
+.brand-head{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px 15px;
+    margin-bottom:20px;
+    border-radius:24px;
+    background:linear-gradient(135deg,#1e1147 0%,#3b1877 50%,#581c87 100%);
+    border:2px solid rgba(255,255,255,.28);
+    box-shadow:
+        0 6px 0 2px rgba(91,33,182,.35),
+        0 18px 40px rgba(30,17,71,.28),
+        inset 0 2px 0 rgba(255,255,255,.35);
+}
+.brand-head::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(244,114,182,.25) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(139,92,246,.30) 0%, transparent 60%);
+}
+.brand-head .b-shield{
+    width:46px;
+    height:46px;
+    flex-shrink:0;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    color:#ffffff;
+    font-size:1.1rem;
+    background:rgba(255,255,255,.18);
+    border:1.5px solid rgba(255,255,255,.32);
+    box-shadow:0 4px 12px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.brand-head .b-title{
+    flex:1;
+    min-width:0;
+    font-family:"Space Grotesk","Nunito",sans-serif;
+    font-size:1.05rem;
+    font-weight:900;
+    letter-spacing:-.01em;
+    color:#ffffff;
+    text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.brand-head .b-title small{
+    display:block;
+    margin-top:2px;
+    font-family:"Nunito",sans-serif;
+    font-size:.64rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#d8b4fe;
+    text-shadow:none;
+}
+.brand-head .b-dot{
+    width:44px;
+    height:44px;
+    flex-shrink:0;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    color:#ffffff;
+    font-size:.95rem;
+    background:rgba(255,255,255,.22);
+    border:1.5px solid rgba(255,255,255,.35);
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+/* ============ HERO (no logo) ============ */
+.hero{
+    text-align:center;
+    padding:6px 0 20px;
+}
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:#b45309;
+    background:#fef3c7;
+    border:1.5px solid rgba(245,158,11,.4);
+    box-shadow:0 3px 0 rgba(245,158,11,.25);
+    margin-bottom:18px;
+}
+.hero-badge i{ color:#f59e0b; }
+
+.hero h1{
+    margin:0 0 10px;
+    font-family:"Space Grotesk","Nunito",sans-serif;
+    font-size:clamp(1.7rem,6.2vw,2.3rem);
+    font-weight:900;
+    letter-spacing:-.02em;
+    background:linear-gradient(120deg,#5b21b6 0%,#8b5cf6 45%,#ec4899 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+.hero p{
+    max-width:420px;
+    margin:0 auto;
+    font-size:.86rem;
+    font-weight:700;
+    line-height:1.6;
+    color:#8b80b6;
+}
+.hero p b{ color:#5b21b6; }
+
+/* ============ DOWNLOAD CTA ============ */
+.cta-wrap{
+    margin:22px 0 24px;
+}
+.btn-apk{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    width:100%;
+    min-height:60px;
+    padding:16px 22px;
+    border:0;
+    border-radius:20px;
+    font-family:inherit;
+    font-size:1.02rem;
+    font-weight:900;
+    letter-spacing:.01em;
+    color:#ffffff;
+    text-decoration:none;
+    cursor:pointer;
+    background:linear-gradient(145deg,#a78bfa,#8b5cf6);
+    box-shadow:
+        0 6px 0 #5b21b6,
+        0 14px 30px rgba(139,92,246,.45),
+        inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .18s cubic-bezier(.34,1.4,.64,1), box-shadow .18s ease;
+}
+.btn-apk::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);
+    transform:translateX(-130%);
+    transition:transform .7s ease;
+    pointer-events:none;
+}
+.btn-apk:hover::after{ transform:translateX(130%); }
+.btn-apk:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 9px 0 #5b21b6,
+        0 20px 38px rgba(139,92,246,.55),
+        inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-apk:active{
+    transform:translateY(3px);
+    box-shadow:0 1px 0 #5b21b6, 0 4px 10px rgba(139,92,246,.3);
+}
+.btn-apk i{ font-size:1.1rem; }
+.btn-apk .sub{
+    display:block;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.02em;
+    opacity:.85;
+    margin-top:1px;
+}
+.btn-apk.disabled{
+    background:linear-gradient(145deg,#c4b5fd,#a78bfa);
+    box-shadow:0 6px 0 #7c3aed, 0 12px 24px rgba(139,92,246,.28);
+    pointer-events:none;
+    opacity:.85;
+    cursor:not-allowed;
+}
+
+.cta-meta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-top:14px;
+    flex-wrap:wrap;
+    font-size:.72rem;
+    font-weight:800;
+    color:#8b80b6;
+}
+.cta-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+.cta-meta i{ color:#8b5cf6; font-size:.72rem; }
+
+/* ============ TOOLS SECTION ============ */
+.tools-section{
+    margin-top:4px;
+    padding:18px 14px 16px;
+    border-radius:26px;
+    background:linear-gradient(145deg,#ffffff,#faf8ff);
+    border:2px solid rgba(167,139,250,.22);
+    box-shadow:
+        0 4px 0 1px rgba(167,139,250,.16),
+        0 12px 26px rgba(100,60,200,.10),
+        inset 0 1px 0 #ffffff;
+    animation:clykFloatUp .55s .15s cubic-bezier(.2,.8,.2,1) both;
+}
+.tools-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:14px;
+    padding:0 4px;
+}
+.tools-head h2{
+    font-family:"Space Grotesk","Nunito",sans-serif;
+    font-size:1rem;
+    font-weight:900;
+    color:#1e1147;
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+.tools-head h2 i{ color:#8b5cf6; }
+.tools-count{
+    padding:5px 11px;
+    border-radius:999px;
+    font-size:.7rem;
+    font-weight:900;
+    color:#5b21b6;
+    background:#ede9fe;
+    border:1.5px solid rgba(167,139,250,.3);
+}
+
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+}
+.tool-mini{
+    position:relative;
+    padding:12px 8px 10px;
+    border-radius:18px;
+    text-align:center;
+    background:#ffffff;
+    border:2px solid rgba(167,139,250,.22);
+    box-shadow:
+        0 3px 0 1px rgba(167,139,250,.16),
+        0 8px 18px rgba(100,60,200,.10),
+        inset 0 2px 4px #ffffff;
+    transition:transform .2s cubic-bezier(.34,1.45,.64,1), box-shadow .2s ease, border-color .2s ease;
+}
+.tool-mini:hover{
+    transform:translateY(-4px) scale(1.02);
+    border-color:rgba(139,92,246,.45);
+    box-shadow:
+        0 6px 0 2px rgba(167,139,250,.22),
+        0 16px 30px rgba(100,60,200,.16),
+        inset 0 2px 4px #ffffff;
+}
+.tool-mini .t-ico{
+    width:52px;
+    height:52px;
+    margin:0 auto 9px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#ffffff 0%,#f3e8ff 100%);
+    border:2px solid rgba(255,255,255,.9);
+    box-shadow:0 6px 14px rgba(139,92,246,.2), inset 0 2px 2px #ffffff;
+    overflow:hidden;
+    transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.tool-mini:hover .t-ico{ transform:scale(1.12) rotate(-4deg); }
+.tool-mini .t-ico img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:6px;
+    border-radius:12px;
+    display:block;
+}
+.tool-mini .t-ico i{
+    font-size:1.4rem;
+    color:#8b5cf6;
+}
+.tool-mini .t-name{
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    font-size:.72rem;
+    font-weight:900;
+    line-height:1.2;
+    color:#1e1147;
+    min-height:1.75rem;
+    word-break:break-word;
+}
+.tool-mini .t-desc{
+    margin-top:3px;
+    font-size:.6rem;
+    font-weight:700;
+    color:#8b80b6;
+    line-height:1.25;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.tool-mini .vip-tag{
+    position:absolute;
+    top:6px;
+    right:6px;
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    padding:2px 6px;
+    border-radius:999px;
+    font-size:.54rem;
+    font-weight:900;
+    letter-spacing:.02em;
+    color:#78350f;
+    background:linear-gradient(145deg,#fde68a,#f59e0b);
+    border:1.5px solid rgba(255,255,255,.7);
+    box-shadow:0 2px 0 #b45309, 0 4px 10px rgba(245,158,11,.35);
+}
+.tool-mini .vip-tag i{ font-size:.5rem; }
+
+.tools-empty{
+    grid-column:1/-1;
+    padding:26px 12px;
+    text-align:center;
+    font-size:.82rem;
+    font-weight:800;
+    color:#8b80b6;
+}
+.tools-empty i{
+    display:block;
+    font-size:1.6rem;
+    color:#c3b5ea;
+    margin-bottom:8px;
+}
+
+.tools-more{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:14px;
+    padding:11px 16px;
+    border-radius:16px;
+    font-size:.78rem;
+    font-weight:900;
+    color:#5b21b6;
+    background:linear-gradient(145deg,#ffffff,#f3e8ff);
+    border:2px solid rgba(167,139,250,.28);
+    box-shadow:0 3px 0 #d4c5f9, 0 8px 18px rgba(139,92,246,.14);
+    cursor:default;
+}
+
+/* ============ STEPS ============ */
+.steps{
+    display:grid;
+    gap:11px;
+    margin-top:22px;
+}
+.step{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:12px;
+    border-radius:18px;
+    background:linear-gradient(145deg,#ffffff,#faf8ff);
+    border:1.5px solid rgba(167,139,250,.2);
+    box-shadow:0 3px 0 rgba(167,139,250,.12), inset 0 1px 0 #ffffff;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.step:hover{
+    transform:translateY(-2px);
+    border-color:rgba(139,92,246,.4);
+    box-shadow:0 6px 0 rgba(167,139,250,.2), 0 12px 24px rgba(100,60,200,.14);
+}
+.step-num{
+    flex:0 0 28px;
+    height:28px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    font-size:.78rem;
+    font-weight:900;
+    color:#ffffff;
+    background:linear-gradient(145deg,#a78bfa,#8b5cf6);
+    box-shadow:0 3px 0 #5b21b6, 0 6px 14px rgba(139,92,246,.35);
+}
+.step > div{ flex:1; min-width:0; }
+.step strong{
+    display:block;
+    margin-bottom:2px;
+    font-size:.84rem;
+    font-weight:900;
+    color:#1e1147;
+}
+.step p{
+    margin:0;
+    font-size:.75rem;
+    font-weight:600;
+    line-height:1.5;
+    color:#8b80b6;
+}
+
+/* ============ FOOTER ============ */
+.foot{
+    margin-top:24px;
+    padding:16px 4px 2px;
+    border-top:1.5px solid rgba(167,139,250,.18);
+    text-align:center;
+    font-size:.74rem;
+    font-weight:800;
+    color:#8b80b6;
+    animation:clykFloatUp .55s .3s cubic-bezier(.2,.8,.2,1) both;
+}
+.foot .brandline{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+}
+.foot .brandline i{ color:#8b5cf6; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:480px){
+    body{ padding:12px 10px 34px !important; }
+    .card{ padding:14px 12px 18px; border-radius:26px; }
+
+    .brand-head{ padding:11px 12px; border-radius:22px; gap:10px; margin-bottom:14px; }
+    .brand-head .b-shield{ width:40px; height:40px; border-radius:13px; font-size:.95rem; }
+    .brand-head .b-title{ font-size:.94rem; }
+    .brand-head .b-title small{ font-size:.58rem; }
+    .brand-head .b-dot{ width:38px; height:38px; border-radius:13px; font-size:.85rem; }
+
+    .hero{ padding:2px 0 14px; }
+    .hero h1{ margin-bottom:8px; }
+    .hero p{ font-size:.8rem; }
+
+    .btn-apk{ min-height:56px; font-size:.95rem; border-radius:18px; }
+    .cta-wrap{ margin:16px 0 20px; }
+    .cta-meta{ gap:10px; font-size:.68rem; }
+
+    .tools-section{ padding:14px 10px 12px; border-radius:22px; }
+    .tools-head h2{ font-size:.9rem; }
+    .tools-head h2 i{ font-size:.85rem; }
+    .tools-count{ font-size:.64rem; padding:4px 9px; }
+    .tools-grid{ gap:8px; }
+    .tool-mini{ padding:10px 6px 9px; border-radius:16px; }
+    .tool-mini .t-ico{ width:46px; height:46px; border-radius:13px; }
+    .tool-mini .t-ico img{ padding:5px; }
+    .tool-mini .t-ico i{ font-size:1.2rem; }
+    .tool-mini .t-name{ font-size:.66rem; min-height:1.6rem; }
+    .tool-mini .t-desc{ font-size:.56rem; }
+    .tool-mini .vip-tag{ font-size:.5rem; padding:2px 5px; top:4px; right:4px; }
+
+    .step{ padding:10px; border-radius:16px; gap:10px; }
+    .step strong{ font-size:.8rem; }
+    .step p{ font-size:.71rem; }
+    .step-num{ flex:0 0 24px; height:24px; border-radius:9px; font-size:.72rem; }
+
+    .foot{ font-size:.7rem; margin-top:18px; padding-top:12px; }
+}
+
+@media (max-width:360px){
+    .tools-grid{ gap:6px; }
+    .tool-mini{ padding:9px 4px 8px; border-radius:14px; }
+    .tool-mini .t-ico{ width:42px; height:42px; }
+    .tool-mini .t-ico img{ padding:4px; }
+    .tool-mini .t-ico i{ font-size:1.05rem; }
+    .tool-mini .t-name{ font-size:.62rem; }
+    .tool-mini .t-desc{ display:none; }
+}
+</style>
+</head>
+<body>
+<main class="shell">
+    <section class="card">
+
+        <!-- ============ HEADER (text only, no logo) ============ -->
+        <header class="brand-head">
+            <div class="b-shield"><i class="fas fa-shield-halved"></i></div>
+            <div class="b-title">
+                FAM OFC
+                <small>Official Toolkit</small>
+            </div>
+            <div class="b-dot"><i class="fas fa-mobile-screen-button"></i></div>
+        </header>
+
+        <!-- ============ HERO (no logo image) ============ -->
+        <section class="hero">
+            <div class="hero-badge">
+                <i class="fas fa-mobile-screen-button"></i> App Only Access
+            </div>
+
+            <h1>FAM OFC Toolkit</h1>
+            <p>Yeh toolkit sirf official <b>Famofc Android App</b> me available hai. Browser se login / tools use nahi ho sakte.</p>
+        </section>
+
+        <!-- ============ DOWNLOAD CTA ============ -->
+        <div class="cta-wrap">
+                            <a class="btn-apk" href="download-apk.php">
+                    <i class="fas fa-download"></i>
+                    <span>
+                        Download Famofc APK
+                        <span class="sub">Latest version · Direct install</span>
+                    </span>
+                </a>
+            
+            <div class="cta-meta">
+                <span><i class="fas fa-shield-halved"></i> Safe & Signed</span>
+                <span><i class="fas fa-bolt"></i> Fast Install</span>
+                <span><i class="fas fa-lock"></i> APK Only</span>
+            </div>
+        </div>
+
+        <!-- ============ TOOLS PREVIEW ============ -->
+        <section class="tools-section">
+            <div class="tools-head">
+                <h2><i class="fas fa-toolbox"></i> Tools inside the app</h2>
+                                    <span class="tools-count">18+ tools</span>
+                            </div>
+
+            <div class="tools-grid">
+                                                            <div class="tool-mini" title="Sim Database">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/simdata.png"
+                                         alt="Sim Database"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Sim Database</div>
+                                                            <div class="t-desc">Access SIM owner details</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Camera Hack">
+                                                            <span class="vip-tag"><i class="fas fa-crown"></i> VIP</span>
+                                                        <div class="t-ico">
+                                                                    <img src="icon/famcamerah.png"
+                                         alt="Camera Hack"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Camera Hack</div>
+                                                            <div class="t-desc">camera location device hack</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Gallery Hack">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/galleryhack.png"
+                                         alt="Gallery Hack"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Gallery Hack</div>
+                                                            <div class="t-desc">grab all gallery photo</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Notifications Hack">
+                                                            <span class="vip-tag"><i class="fas fa-crown"></i> VIP</span>
+                                                        <div class="t-ico">
+                                                                    <img src="icon/notification.png"
+                                         alt="Notifications Hack"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Notifications Hack</div>
+                                                            <div class="t-desc">live view notification for any device</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Mobile hack">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/rat.png"
+                                         alt="Mobile hack"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Mobile hack</div>
+                                                            <div class="t-desc">Android remote control</div>
+                                                    </div>
+                                            <div class="tool-mini" title="WhatsApp bot">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/wabot.png"
+                                         alt="WhatsApp bot"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">WhatsApp bot</div>
+                                                            <div class="t-desc">WhatsApp bot button type</div>
+                                                    </div>
+                                            <div class="tool-mini" title="WhatsApp Boom">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/smsboomer.png"
+                                         alt="WhatsApp Boom"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">WhatsApp Boom</div>
+                                                            <div class="t-desc">WhatsApp pair bomber</div>
+                                                    </div>
+                                            <div class="tool-mini" title="SMS Bomber">
+                                                            <span class="vip-tag"><i class="fas fa-crown"></i> VIP</span>
+                                                        <div class="t-ico">
+                                                                    <img src="icon/smsboom.png"
+                                         alt="SMS Bomber"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">SMS Bomber</div>
+                                                            <div class="t-desc">SMS flooder</div>
+                                                    </div>
+                                            <div class="tool-mini" title="BUG BIN">
+                                                            <span class="vip-tag"><i class="fas fa-crown"></i> VIP</span>
+                                                        <div class="t-ico">
+                                                                    <img src="icon/Bin.png"
+                                         alt="BUG BIN"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">BUG BIN</div>
+                                                            <div class="t-desc">free trial bins</div>
+                                                    </div>
+                                            <div class="tool-mini" title="CC Generator">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/MASS-CC-CHECKER-main.png"
+                                         alt="CC Generator"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">CC Generator</div>
+                                                            <div class="t-desc">Credit card generator</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Link Shortener">
+                                                        <div class="t-ico">
+                                                                    <img src="icon/shorturl.png"
+                                         alt="Link Shortener"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Link Shortener</div>
+                                                            <div class="t-desc">Short Your Big Urls</div>
+                                                    </div>
+                                            <div class="tool-mini" title="Website Cloner">
+                                                            <span class="vip-tag"><i class="fas fa-crown"></i> VIP</span>
+                                                        <div class="t-ico">
+                                                                    <img src="icon/famwebcoper.png"
+                                         alt="Website Cloner"
+                                         loading="lazy"
+                                         onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'fas fa-tools'}))">
+                                                            </div>
+                            <div class="t-name">Website Cloner</div>
+                                                            <div class="t-desc">Clone any website</div>
+                                                    </div>
+                                                </div>
+
+                            <div class="tools-more">
+                    <i class="fas fa-plus-circle"></i>
+                    + 6 more inside the app
+                </div>
+                    </section>
+
+        <!-- ============ STEPS ============ -->
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">1</span>
+                <div>
+                    <strong>Download the APK</strong>
+                    <p>Upar wale button se official Famofc APK download karein.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <div>
+                    <strong>Install on Android</strong>
+                    <p>Agar "Unknown sources" warning aaye to allow karein.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <div>
+                    <strong>Sign Up / Login</strong>
+                    <p>App khol kar account banayein ya existing account se login karein.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">4</span>
+                <div>
+                    <strong>Use the tools</strong>
+                    <p>Sabhi free & VIP tools ab app ke andar unlock ho jayenge.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="foot">
+            <div class="brandline">
+                <i class="fas fa-circle-check"></i>
+                © 2026 FAM OFC · All rights reserved
+            </div>
+        </footer>
+
+    </section>
+</main>
+</body>
+</html>
